@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú Cafetería SJD</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:white;
+    font-family:Segoe UI, Arial, sans-serif;
+    color:#1f2937;
+}
+
+
+.header{
+    background:#8A278C;
+    color:white;
+    padding:12px 30px;
+}
+
+.titulo{
+    font-size:clamp(26px, 2.5vw, 42px);
+}
+.subtitulo{
+    font-size:18px;
+    opacity:0.95;
+}
+
+.container{
+    display:flex;
+    height:calc(100vh - 105px);
+    width:100%;
+}
+
+.numero-dia{
+    font-size:90px;
+    font-weight:bold;
+    line-height:1;
+    color:#8A278C;
+    margin-top:20px;
+}
+
+.mes{
+    font-size:24px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.anio{
+    font-size:18px;
+    color:#666;
+}
+
+.dia-es{
+    font-size:24px;
+    margin-top:25px;
+    color:#666;
+    font-weight:bold;
+}
+
+.content{
+    flex:1;
+    padding:20px;
+}
+
+.pantalla{
+    display:grid;
+    grid-template-columns: 32% 68%;
+    gap:20px;
+}
+.iptv-panel{
+    width:100%;
+    height:100%;
+
+    padding:15px;
+
+    background:white;
+}
+
+.columna{
+    width:100%;
+}
+
+.servicio{
+    background:#D92D0F;
+    color:white;
+
+    text-align:center;
+
+    padding:12px;
+
+    font-size:24px;
+    font-weight:bold;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+}
+
+.bloque{
+
+    background:white;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    margin-bottom:14px;
+
+    box-shadow:
+    0 2px 8px rgba(0,0,0,0.08);
+}
+
+.titulo-bloque{
+
+    text-align:center;
+
+    padding:14px;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+.primero{
+    background:#E8D6EF;
+    color:#6B1F72;
+}
+
+.segundo{
+    background:#FDE4C2;
+    color:#C76B00;
+}
+
+.vegano{
+    background:#9fd48c;
+}
+
+.postre{
+    background:#F8D7D1;
+    color:#D92D0F;
+}
+
+.cuerpo-bloque{
+    padding:12px;
+    min-height:120px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.item{
+
+    font-size:clamp(18px, 1.25vw, 22px);
+
+    font-weight:bold;
+
+    text-align:center;
+
+    margin:12px 0;
+
+    line-height:1.4;
+}
+.tv-placeholder{
+    width:100%;
+    height:100%;
+
+    min-height:600px;
+
+    background:white;
+}
+  .menu-panel{
+    width:100%;
+
+}
+    .postre-cuerpo{
+    min-height:40px;
+    padding:6px;
+}
+.footer{
+    text-align:center;
+    margin-top:10px;
+    font-size:17px;
+    color:#666;
+    white-space:nowrap;
+}
+html,
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    background:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="titulo" id="tituloSemana">
+MENÚ CAFETERIA
+</div>
+
+<div class="subtitulo" id="fechaCabecera">
+Hospital Sant Joan de Déu Barcelona
+</div>
+
+</div>
+
+<div class="container">
+<!-- INICIO CONTENT -->
+<div class="content">
+<div class="pantalla">
+<div class="menu-panel">
+<div class="columna" id="menuComida">
+<div class="servicio">
+DINAR / COMIDA
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque primero">
+PRIMER / PRIMERO
+</div>
+
+<div class="cuerpo-bloque" id="cp"></div>
+
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque segundo">
+SEGON / SEGUNDO
+</div>
+
+<div class="cuerpo-bloque" id="cs"></div>
+
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque vegano">
+VEGÀ / VEGANO
+</div>
+
+<div class="cuerpo-bloque" id="cveg"></div>
+
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque postre">
+POSTRE
+</div>
+
+<div class="cuerpo-bloque postre-cuerpo" id="cpostre"></div>
+</div>
+
+</div>
+
+<div class="columna" id="menuCena">
+
+<div class="servicio">
+SOPAR / CENA
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque primero">
+PRIMER / PRIMERO
+</div>
+
+<div class="cuerpo-bloque" id="cnp"></div>
+
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque segundo">
+SEGON / SEGUNDO
+</div>
+
+<div class="cuerpo-bloque" id="cns"></div>
+
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque vegano">
+VEGÀ / VEGANO
+</div>
+
+<div class="cuerpo-bloque" id="cnveg"></div>
+
+</div>
+
+<div class="bloque">
+
+<div class="titulo-bloque postre">
+POSTRE
+</div>
+
+<div class="cuerpo-bloque postre-cuerpo" id="cnpostre"></div>
+</div>
+</div>
+
+</div>
+
+<div class="iptv-panel">
+<div class="tv-placeholder"></div>
+</div>
+</div>
+<div class="footer">
+    Bon profit · Buen provecho · Enjoy your meal · Bon appétit ·
+    شهية طيبة · 祝您用餐愉快 · 맛있게 드세요 · 召し上がれ
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const URL_JSON =
+"https://script.google.com/macros/s/AKfycbxi7zYor8bUyAno5CUTJXWBin_ySMJDPrm9-Y1iY5pqKzOZwzwSXUsmtL8wwdPwPPqmqQ/exec";
+
+const CAT = {
+"Lunes":"DILLUNS",
+"Martes":"DIMARTS",
+"Miércoles":"DIMECRES",
+"Jueves":"DIJOUS",
+"Viernes":"DIVENDRES",
+"Sabado":"DISSABTE",
+"Sábado":"DISSABTE",
+"Domingo":"DIUMENGE"
+};
+
+const MESES_CAT = [
+"GENER",
+"FEBRER",
+"MARÇ",
+"ABRIL",
+"MAIG",
+"JUNY",
+"JULIOL",
+"AGOST",
+"SETEMBRE",
+"OCTUBRE",
+"NOVEMBRE",
+"DESEMBRE"
+];
+
+function semanaMes(fecha){
+    return Math.ceil(fecha.getDate()/7);
+}
+
+async function cargar(){
+
+try{
+
+const respuesta =
+await fetch(URL_JSON + "?t=" + Date.now());
+
+const datos =
+await respuesta.json();
+
+const hoy = new Date();
+const minutosActuales =
+hoy.getHours() * 60 +
+hoy.getMinutes();
+
+const esComida =
+minutosActuales < 915;
+const yyyy = hoy.getFullYear();
+const mm = String(hoy.getMonth()+1).padStart(2,"0");
+const dd = String(hoy.getDate()).padStart(2,"0");
+
+const fechaISO =
+`${yyyy}-${mm}-${dd}`;
+
+const registros =
+datos.filter(x =>
+String(x.Fecha).startsWith(fechaISO)
+);
+
+if(registros.length===0){
+    return;
+}
+
+const diaES =
+registros[0].Dia;
+
+document.getElementById("tituloSemana").innerHTML =
+"MENÚ CAFETERIA";
+
+document.getElementById("fechaCabecera").innerHTML =
+"Hospital Sant Joan de Déu Barcelona · " +
+(CAT[diaES] || diaES.toUpperCase()) +
+" " +
+dd + " " +
+MESES_CAT[hoy.getMonth()];
+
+document.getElementById("menuComida").style.display =
+esComida ? "block" : "none";
+
+document.getElementById("menuCena").style.display =
+esComida ? "none" : "block";
+
+function filtrar(servicio,categoria){
+
+return registros.filter(x =>
+x.Servicio===servicio &&
+x.Categoria===categoria &&
+x.Activo==="SI"
+);
+
+}
+
+function pintar(lista){
+
+return lista.map(x =>
+`<div class="item">${x.Plato_Cat}</div>`
+).join("");
+
+}
+
+cp.innerHTML =
+pintar(filtrar("Comida","Primero"));
+
+cs.innerHTML =
+pintar(filtrar("Comida","Segundo"));
+
+cveg.innerHTML =
+pintar(filtrar("Comida","Vegano"));
+
+cpostre.innerHTML =
+'<div class="item">Pregunta por el plato / Pregunta per el plat</div>';
+
+cnp.innerHTML =
+pintar(filtrar("Cena","Primero"));
+
+cns.innerHTML =
+pintar(filtrar("Cena","Segundo"));
+
+cnveg.innerHTML =
+pintar(filtrar("Cena","Vegano"));
+
+cnpostre.innerHTML =
+'<div class="item">Pregunta por el plato / Pregunta per el plat</div>';
+
+}
+catch(e){
+console.error(e);
+}
+
+}
+
+cargar();
+setInterval(cargar,60000);
+
+</script>
+
+</body>
+</html>
