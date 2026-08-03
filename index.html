@@ -69,13 +69,22 @@ body{
 .content{
     flex:1;
     padding:20px;
+
+    display:flex;
+    flex-direction:column;
+
     overflow:hidden;
 }
 
 .pantalla{
+    flex:1;
+
     display:grid;
-    grid-template-columns: 32% 68%;
+    grid-template-columns:32% 68%;
+
     gap:20px;
+
+    overflow:hidden;
 }
 .iptv-panel{
     width:100%;
@@ -183,16 +192,22 @@ body{
     width:100%;
 
 }
-    .postre-cuerpo{
-    min-height:70px;
+.postre-cuerpo{
+    height:70px;
     padding:6px;
 }
 .footer{
+    flex-shrink:0;
+
     text-align:center;
-    margin-top:10px;
+
     font-size:17px;
+
     color:#666;
+
     white-space:nowrap;
+
+    margin-top:10px;
 }
 html,
 body{
