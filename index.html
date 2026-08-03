@@ -22,7 +22,12 @@ body{
 .header{
     background:#8A278C;
     color:white;
+
     padding:12px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .titulo{
@@ -196,6 +201,12 @@ body{
     height:70px;
     padding:6px;
 }
+    .logo-sjd{
+    height:48px;
+    width:auto;
+
+    object-fit:contain;
+}
 .footer{
     flex-shrink:0;
 
@@ -225,13 +236,17 @@ body{
 
 <div class="header">
 
-<div class="titulo" id="tituloSemana">
-MENÚ CAFETERIA
-</div>
+    <div class="header-texto">
+        <div class="titulo" id="tituloSemana">
+            MENÚ CAFETERIA
+        </div>
 
-<div class="subtitulo" id="fechaCabecera">
-Hospital Sant Joan de Déu Barcelona
-</div>
+        <div class="subtitulo" id="fechaCabecera">
+            Hospital Sant Joan de Déu Barcelona
+        </div>
+    </div>
+
+    logo_sjd.png class="logo-sjd" alt="Sant Joan de Déu">
 
 </div>
 
