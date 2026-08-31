@@ -249,18 +249,6 @@ body{
 
     background:transparent;
 }
-    .alergenos{
-    display:inline-flex;
-    gap:4px;
-    margin-left:8px;
-    vertical-align:middle;
-}
-
-.alergeno-icon{
-    width:22px;
-    height:22px;
-    vertical-align:middle;
-}
 html,
 body{
     width:100%;
@@ -397,17 +385,8 @@ POSTRE
 </div>
 </div>
 <div class="footer">
-    <div>
-        Bon profit · Buen provecho · Enjoy your meal · Bon appétit ·
-        شهية طيبة · 祝您用餐愉快 · 맛있게 드세요 · 召し上がれ
-    </div>
-
-<div style="margin-top:6px;font-size:14px;">
-    <img src="gluten.svg" class="alergeno-icon">
-p;
-    <img src="l
-    Contiene lácteos
-</div>
+    Bon profit · Buen provecho · Enjoy your meal · Bon appétit ·
+    شهية طيبة · 祝您用餐愉快 · 맛있게 드세요 · 召し上がれ
 </div>
 
 </div>
@@ -513,37 +492,9 @@ x.Activo==="SI"
 
 function pintar(lista){
 
-return lista.map(x => {
-
-const gluten =
-x.Gluten && String(x.Gluten).trim() !== ""
-?
-`<img src="gluten.svg" class="alergeno-iconos && String(x.Lacteos).trim() !== ""
-?
-`<img src="lacteos.svg" class="div class="item">
-${x.Plato_Cat}
-<span class="alergenos">
-${gluten}
-${lacteos}
-</span>
-</div>
-`;
-
-}).join("");
-
-}
-
-return `
-<div class="item">
-${x.Plato_Cat}
-<span class="alergenos">
-${gluten}
-${lacteos}
-</span>
-</div>
-`;
-
-}).join("");
+return lista.map(x =>
+`<div class="item">${x.Plato_Cat}</div>`
+).join("");
 
 }
 
