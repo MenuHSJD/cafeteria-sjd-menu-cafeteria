@@ -256,6 +256,23 @@ body{
     margin:0;
     background:transparent;
 }
+    .item-con-iconos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin:8px 0;
+}
+
+.item-texto{
+    text-transform:uppercase;
+}
+
+.icono-alergeno{
+    width:22px;
+    height:22px;
+    object-fit:contain;
+}
 
 </style>
 
@@ -489,12 +506,76 @@ x.Activo==="SI"
 );
 
 }
+    const PALABRAS_GLUTEN = [
+    "PAN",
+    "PASTA",
+    "MACARRONES",
+    "ESPAGUETIS",
+    "FIDEOS",
+    "LASAÑA",
+    "LASAÑA",
+    "CANELONES",
+    "CROQUETA",
+    "CROQUETAS",
+    "PIZZA",
+    "EMPANADA",
+    "REBOZADO",
+    "HARINA",
+    "TRIGO"
+];
+
+const PALABRAS_LACTEOS = [
+    "QUESO",
+    "MOZZARELLA",
+    "PARMESANO",
+    "CHEDDAR",
+    "LECHE",
+    "NATA",
+    "YOGUR",
+    "BECHAMEL",
+    "MANTEQUILLA",
+    "GRATINADO"
+];
 
 function pintar(lista){
 
-return lista.map(x =>
-`<div class="item">${x.Plato_Cat}</div>`
-).join("");
+return lista.map(x => {
+
+const nombre = (x.Plato_Cat || "").toUpperCase();
+
+const tieneGluten =
+PALABRAS_GLUTEN.some(p =>
+nombre.includes(p));
+
+const tieneLacteos =
+PALABRAS_LACTEOS.some(p =>
+nombre.includes(p));
+
+return `
+<div class="item item-con-iconos">
+
+    <span class="item-texto">
+        ${x.Plato_Cat}
+    </span>
+
+    ${
+        tieneGluten
+        ? '<img src="gluten.svg" class="icono-alergeno">'
+        : ''
+    }
+
+    ${
+        tieneLacteos
+        ? '<img src="lacteos.svg" class="icono-alergeno">'
+        : ''
+    }
+
+</div>
+`;
+
+}).join("");
+
+}
 
 }
 
