@@ -249,6 +249,18 @@ body{
 
     background:transparent;
 }
+    .alergenos{
+    display:inline-flex;
+    gap:4px;
+    margin-left:8px;
+    vertical-align:middle;
+}
+
+.alergeno-icon{
+    width:18px;
+    height:18px;
+    display:inline-block;
+}
 html,
 body{
     width:100%;
@@ -385,8 +397,14 @@ POSTRE
 </div>
 </div>
 <div class="footer">
-    Bon profit · Buen provecho · Enjoy your meal · Bon appétit ·
-    شهية طيبة · 祝您用餐愉快 · 맛있게 드세요 · 召し上がれ
+    <div>
+        Bon profit · Buen provecho · Enjoy your meal · Bon appétit ·
+        شهية طيبة · 祝您用餐愉快 · 맛있게 드세요 · 召し上がれ
+    </div>
+
+    <div style="margin-top:6px;font-size:14px;">
+        🌾 Contiene gluten · 🥛 Contiene lácteos
+    </div>
 </div>
 
 </div>
@@ -492,9 +510,57 @@ x.Activo==="SI"
 
 function pintar(lista){
 
-return lista.map(x =>
-`<div class="item">${x.Plato_Cat}</div>`
-).join("");
+return lista.map(x => {
+
+const gluten =
+x.Gluten && String(x.Gluten).trim() !== ""
+?
+`<svg class="alergeno-icon" viewBox="0 0 24 24">
+<path fill="currentColor"
+d="M12 2
+C11 4 9 5 8 7
+C9 8 10 9 12 10
+C10 11 9 12 8 13
+C9 14 10 15 12 16
+C10 17 9 18 8 19
+C9 20 10 21 12 22
+M12 2
+C13 4 15 5 16 7
+C15 8 14 9 12 10
+C14 11 15 12 16 13
+C15 14 14 15 12 16
+C14 17 15 18 16 19
+C15 20 14 21 12 22"
+stroke="black"
+stroke-width="1.5"
+fill="none"/>
+</svg>`
+:
+"";
+
+const lacteos =
+x.Lacteos && String(x.Lacteos).trim() !== ""
+?
+`<svg class="alergeno-icon" viewBox="0 0 24 24">
+<path fill="none"
+stroke="black"
+stroke-width="2"
+d="M9 3h6v4l2 3v11H7V10l2-3z"/>
+</svg>`
+:
+"";
+
+return `
+<div class="item">
+${x.Plato_Cat}
+<span class="alergenos">
+${gluten}
+${lacteos}
+</span>
+</div>
+`;
+
+}).join("");
 
 }
 
