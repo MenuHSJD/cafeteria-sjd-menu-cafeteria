@@ -547,12 +547,10 @@ return lista.map(x => {
 const nombre = (x.Plato_Cat || "").toUpperCase();
 
 const tieneGluten =
-PALABRAS_GLUTEN.some(p =>
-nombre.includes(p));
+String(x.Gluten || "").toUpperCase() === "SI";
 
 const tieneLacteos =
-PALABRAS_LACTEOS.some(p =>
-nombre.includes(p));
+String(x.Lacteos || "").toUpperCase() === "SI";
 
 return `
 <div class="item item-con-iconos">
